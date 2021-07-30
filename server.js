@@ -28,6 +28,8 @@ function createNewNote(body, notesArray) {
   return note;
 }
 
+//------ GET ROUTES------
+
 app.get("/api/db/:id", (req, res) => {
   const result = findById(req.params.id, notes);
   res.json(result);
@@ -37,9 +39,18 @@ app.get("/api/db", (req, res) => {
   res.json(notes);
 });
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
+
+//==========GET Routes =======
+
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
 });
+
+
 
 app.post("/api/db", (req, res) => {
   // req.body is where our incoming content will be
