@@ -15,14 +15,16 @@ app.use(express.json());
 app.use(express.static("public"));
 // END BOILERPLATE & DEPENDENCIES //
 
+
+
 /// ROUTES START HERE ///////////////
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/index.html"));
+    res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
 });
 
 /// GET /NOTES SHOULD RETURN THE NOTES.HTML FILE
 app.get("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/notes.html"));
+    res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
 });
 
 
