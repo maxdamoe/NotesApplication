@@ -18,18 +18,18 @@ app.use(express.static("public"));
 
 
 /// ROUTES START HERE ///////////////
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/index.html"));
+app.get("./Develop/public/index.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
 });
 
 /// GET /NOTES SHOULD RETURN THE NOTES.HTML FILE
-app.get("/db", (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/notes.html"));
+app.get("/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
 });
 
 
 //// GET /api/notes should read the db.json file and return all saved notes json
-app.get("/api/db", (req, res) => {
+app.get("/api/notes", (req, res) => {
     console.log(userNotes);
     return res.json(userNotes);   /// will return all userNotes in json format 
 
