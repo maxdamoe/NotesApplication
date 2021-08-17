@@ -23,13 +23,13 @@ app.get("/", (req, res) => {
 });
 
 /// GET /NOTES SHOULD RETURN THE NOTES.HTML FILE
-app.get("/notes", (req, res) => {
+app.get("/db", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
 
 //// GET /api/notes should read the db.json file and return all saved notes json
-app.get("/api/notes", (req, res) => {
+app.get("/api/db", (req, res) => {
     console.log(userNotes);
     return res.json(userNotes);   /// will return all userNotes in json format 
 
@@ -38,7 +38,7 @@ app.get("/api/notes", (req, res) => {
 
 
 // POST /API/NOTES SHOULD RECEIVE A NEW NOTE TO SAVE ON THE REQUEST BODY AND ADD IT TO DB.JSON FILE, & RETURN NEW NOTE TO CLIENT 
-app.post("/api/notes", (req, res) => {
+app.post("/api/db", (req, res) => {
     const newNote = req.body;
     newNote.id = (userNotes.length).toString();
 
