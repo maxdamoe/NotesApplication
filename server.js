@@ -7,7 +7,7 @@ const app = express();
 // IMPORT THE "PATH" module here //
 const path = require("path");
 //// SET VARIABLE THAT REQUIRES DB FILE TO ACCESS DATA //
-const userNotes = require("./db/db.json")
+const userNotes = require("./Develop/db/db.json")
 
 //// set up Express app to handle data parsing ////
 app.use(express.urlencoded({ extended: true }));
