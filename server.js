@@ -7,7 +7,7 @@ const app = express();
 // IMPORT THE "PATH" module here //
 const path = require("path");
 //// SET VARIABLE THAT REQUIRES DB FILE TO ACCESS DATA //
-const userNotes = require("./Develop/db/db.json")
+const userNotes = require("./db/db.json")
 
 //// set up Express app to handle data parsing ////
 app.use(express.urlencoded({ extended: true }));
@@ -18,13 +18,13 @@ app.use(express.static("public"));
 
 
 /// ROUTES START HERE ///////////////
-app.get("./Develop/public/index.html", (req, res) => {
-    res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
+app.get("./public/index.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 /// GET /NOTES SHOULD RETURN THE NOTES.HTML FILE
 app.get("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
 
