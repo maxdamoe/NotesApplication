@@ -18,7 +18,7 @@ app.use(express.static("public"));
 
 
 /// ROUTES START HERE ///////////////
-app.get("./public/index.html", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
@@ -38,7 +38,7 @@ app.get("/api/notes", (req, res) => {
 
 
 // POST /API/NOTES SHOULD RECEIVE A NEW NOTE TO SAVE ON THE REQUEST BODY AND ADD IT TO DB.JSON FILE, & RETURN NEW NOTE TO CLIENT 
-app.post("/api/db", (req, res) => {
+app.post("/api/notes", (req, res) => {
     const newNote = req.body;
     newNote.id = (userNotes.length).toString();
 
